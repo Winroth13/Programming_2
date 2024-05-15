@@ -9,10 +9,12 @@ public abstract class FSM extends Creature {
     protected State state;
 
     public FSM(Point startCoordinate, int rotation, int radius, Color colour, int speed, State startState) {
+        super(startCoordinate, rotation, radius, colour, speed);
+        
         if (startState == null) {
             throw new IllegalArgumentException("StartState cannot be null");
         }
-        super(startCoordinate, rotation, radius, colour, speed);
+        
         this.state = startState;
     }
 

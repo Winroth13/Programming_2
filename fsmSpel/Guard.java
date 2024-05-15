@@ -16,10 +16,12 @@ public class Guard extends FSM {
     private Point returnLocation;
 
     public Guard(Point startCoordinate, int rotation, Point[] patrolPath) {
+        super(startCoordinate, rotation, radius, colour, speed, patrol);
+        
         if (patrolPath == null || patrolPath.length == 0) {
             throw new IllegalArgumentException("Patrolpath cannot be null or empty");
         }
-        super(startCoordinate, rotation, radius, colour, speed, patrol);
+
         this.patrolPath = patrolPath;
         this.target = patrolPath[currentPointIndex];
     }
